@@ -6,11 +6,11 @@ const banner = document.querySelector('.app__image');
 const titulo = document.querySelector('.app__title');
 const botones = document.querySelectorAll('.app__card-button')
 const inputEnfoqueMusica = document.querySelector('#alternar-musica')
-const musica = new Audio ('/sonidos/luna-rise-part-one.mp3')
+const musica = new Audio ('sonidos/luna-rise-part-one.mp3')
 const botonInicialPausar = document.querySelector('#start-pause');
-const audioPausa = new Audio('/sonidos/pause.mp3');
-const audioPlay = new Audio('./sonidos/play.wav');
-const audioTiempoFinalizado = new Audio('/sonidos/beep.mp3')
+const audioPausa = new Audio('sonidos/pause.mp3');
+const audioPlay = new Audio('.sonidos/play.wav');
+const audioTiempoFinalizado = new Audio('sonidos/beep.mp3')
 const textoIniciarPausar = document.querySelector('#start-pause span')
 const iconoIniciarPausar = document.querySelector(".app__card-primary-butto-icon")
 const tiempoEnPantalla = document.querySelector('#timer')
@@ -52,7 +52,7 @@ function cambiarContexto(contexto) {
         contexto.classList.remove('active');
     });
     html.setAttribute ('data-contexto',contexto) 
-    banner.setAttribute('src', `./imagenes/${contexto}.png`)
+    banner.setAttribute('src', `.imagenes/${contexto}.png`)
 
     switch (contexto) {
         case "enfoque":
@@ -97,13 +97,13 @@ function iniciarPausar(){
     audioPlay.play();
     idIntervalo = setInterval(cuentaRegresiva,1000)
     textoIniciarPausar.textContent = "Pausar"
-    iconoIniciarPausar.setAttribute('src','/imagenes/pause.png');
+    iconoIniciarPausar.setAttribute('src','imagenes/pause.png');
 }
 
 function reiniciar(){
     clearInterval(idIntervalo)
     textoIniciarPausar.textContent = "Comenzar"
-    iconoIniciarPausar.setAttribute('src','/imagenes/play_arrow.png');
+    iconoIniciarPausar.setAttribute('src','imagenes/play_arrow.png');
     idIntervalo = null
 }
 
